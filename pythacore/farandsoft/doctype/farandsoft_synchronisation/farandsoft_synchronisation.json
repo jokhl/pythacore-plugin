@@ -1,0 +1,168 @@
+{
+ "actions": [],
+ "creation": "2021-08-23 17:42:52.806167",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "sync_from_date",
+  "sync_sales_orders",
+  "sync_customers",
+  "sync_items",
+  "sync_item_groups",
+  "column_break_5",
+  "sync_datetime",
+  "sync_sales_orders_count",
+  "sync_customers_count",
+  "errors_section",
+  "error_message",
+  "error_preview",
+  "sync_details_section",
+  "sync_log",
+  "sync_log_preview",
+  "headline"
+ ],
+ "fields": [
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nIn Progress\nSuccess\nError",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "error_message",
+   "fieldname": "errors_section",
+   "fieldtype": "Section Break",
+   "label": "Errors"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Error Message",
+   "options": "HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_preview",
+   "fieldtype": "HTML",
+   "label": "Error HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "headline",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Headline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "sync_log",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Synchronisation Log",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_log_preview",
+   "fieldtype": "HTML",
+   "label": "Synchronisation Log HTML",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_customers",
+   "fieldtype": "Check",
+   "label": "Customers",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "fieldname": "sync_from_date",
+   "fieldtype": "Date",
+   "label": "Synchronise From",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_sales_orders",
+   "fieldtype": "Check",
+   "label": "Sales Orders",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "fieldname": "sync_sales_orders_count",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Synchronised Sales Orders Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_customers_count",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Synchronised Customers Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_datetime",
+   "fieldtype": "Datetime",
+   "label": "Synchronisation Run Time",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_items",
+   "fieldtype": "Check",
+   "label": "Items",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_item_groups",
+   "fieldtype": "Check",
+   "label": "Item Groups",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-11-15 10:48:29.573238",
+ "modified_by": "Administrator",
+ "module": "Farandsoft",
+ "name": "Farandsoft Synchronisation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

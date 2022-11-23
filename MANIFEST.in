@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pythacore *.css
+recursive-include pythacore *.csv
+recursive-include pythacore *.html
+recursive-include pythacore *.ico
+recursive-include pythacore *.js
+recursive-include pythacore *.json
+recursive-include pythacore *.md
+recursive-include pythacore *.png
+recursive-include pythacore *.py
+recursive-include pythacore *.svg
+recursive-include pythacore *.txt
+recursive-exclude pythacore *.pyc

@@ -1,0 +1,217 @@
+{
+ "actions": [],
+ "creation": "2021-08-23 17:42:52.806167",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "sync_purchase_invoices",
+  "sync_sales_invoices",
+  "sync_customers",
+  "sync_suppliers",
+  "column_break_6",
+  "sync_si_up_to",
+  "sync_pi_up_to",
+  "sync_date",
+  "errors_section",
+  "error_message",
+  "error_preview",
+  "warning_message",
+  "warning_preview",
+  "synchronised_documents_section",
+  "customers",
+  "suppliers",
+  "column_break_10",
+  "sales_invoices",
+  "purchase_invoices",
+  "sync_details_section",
+  "sync_log",
+  "sync_log_preview",
+  "headline"
+ ],
+ "fields": [
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nSuccess\nError",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_purchase_invoices",
+   "fieldtype": "Check",
+   "label": "Purchase Invoices",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_sales_invoices",
+   "fieldtype": "Check",
+   "label": "Sales Invoices",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "fieldname": "purchase_invoices",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purchase Invoices",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_invoices",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sales Invoices",
+   "read_only": 1
+  },
+  {
+   "fieldname": "errors_section",
+   "fieldtype": "Section Break",
+   "label": "Warnings & Errors"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Error Message",
+   "options": "HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_preview",
+   "fieldtype": "HTML",
+   "label": "Error HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "headline",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Headline",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "sync_log",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Synchronisation Log",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_log_preview",
+   "fieldtype": "HTML",
+   "label": "Synchronisation Log HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_date",
+   "fieldtype": "Datetime",
+   "label": "Synchronisation Date",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_customers",
+   "fieldtype": "Check",
+   "label": "Customers",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "default": "1",
+   "fieldname": "sync_suppliers",
+   "fieldtype": "Check",
+   "label": "Suppliers",
+   "read_only_depends_on": "eval:doc.status!=='Pending'"
+  },
+  {
+   "fieldname": "customers",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "suppliers",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Suppliers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warning_message",
+   "fieldtype": "Code",
+   "hidden": 1,
+   "label": "Warning Message",
+   "options": "HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warning_preview",
+   "fieldtype": "HTML",
+   "label": "Warning HTML",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status==='Success'||doc.status==='Error'||doc.status==='Partial'",
+   "fieldname": "synchronised_documents_section",
+   "fieldtype": "Section Break",
+   "label": "Synchronised Documents"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sync_si_up_to",
+   "fieldtype": "Link",
+   "label": "Synchronise Sales Invoices Up To",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "sync_pi_up_to",
+   "fieldtype": "Link",
+   "label": "Synchronise Purchase Invoices Up To",
+   "options": "Purchase Invoice"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-03-08 12:06:11.416993",
+ "modified_by": "Administrator",
+ "module": "Winbooks",
+ "name": "Winbooks Synchronisation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

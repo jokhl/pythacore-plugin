@@ -1,0 +1,32 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2021-06-23 14:08:43.195188",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "accounting",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Winbooks",
+ "links": [],
+ "modified": "2021-12-07 11:29:05.112762",
+ "modified_by": "Administrator",
+ "module": "Winbooks",
+ "name": "Winbooks",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Synchros Winbooks",
+   "link_to": "Winbooks Synchronisation",
+   "type": "DocType"
+  }
+ ]
+}
